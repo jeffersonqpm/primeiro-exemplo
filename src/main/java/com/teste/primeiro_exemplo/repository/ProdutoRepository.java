@@ -39,5 +39,20 @@ public class ProdutoRepository {
                 .filter(produto -> produto.getId() == id)// pergar da array apenas o produto que tem o ID
                 .findFirst(); // pega o primeiro e retorna
     }
+/**
+ * Metodo para adicionar produto na lista.
+ * @param produto produto que será adionado
+ * @return retorna o produto que foi adicionado na lista.
+ */
+    public Produto adicionar(Produto produto) {
 
-}
+        ultimoId++;
+
+        produto.setId(ultimoId);
+        produtos.add(produto);
+
+        return produto;
+    }
+
+    
+    // time: 18:46
