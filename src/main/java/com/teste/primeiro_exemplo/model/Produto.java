@@ -2,31 +2,21 @@ package com.teste.primeiro_exemplo.model;
 
 public class Produto {
 
-    //#region Atributos
+    // #region Atributos
 
     private int id;
     private String nome;
     private int quantidade;
     private double valor;
     private String obs;
-    
-   //#endregion
 
-   
+    // #endregion
 
-   //#region getterESetters
+    // #region getterESetters
 
     public int getId() {
         return id;
     }
-
-    public Produto(int id, String nome, int quantidade, double valor, String obs) {
-        this.id = id;
-        this.nome = nome;
-        this.quantidade = quantidade;
-        this.valor = valor;
-        this.obs = obs;
-    } 
 
     public void setId(int id) {
         this.id = id;
@@ -64,6 +54,6 @@ public class Produto {
         this.obs = obs;
     }
 
-    //#endregion
+    // #endregion
 
 }
