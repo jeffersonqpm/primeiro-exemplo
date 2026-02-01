@@ -26,7 +26,7 @@ public class Produto {
         this.quantidade = quantidade;
         this.valor = valor;
         this.obs = obs;
-    }
+    } 
 
     public void setId(int id) {
         this.id = id;
