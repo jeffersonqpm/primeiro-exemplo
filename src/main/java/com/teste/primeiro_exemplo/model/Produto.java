@@ -11,6 +11,10 @@ public class Produto {
     private String observacao;
 
     
+
+    
+
+
     public int getId() {
         return id;
     }
