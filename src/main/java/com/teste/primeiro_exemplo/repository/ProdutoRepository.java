@@ -2,16 +2,18 @@ package com.teste.primeiro_exemplo.repository;
 
 import java.lang.foreign.Linker.Option;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 import com.teste.primeiro_exemplo.model.Produto;
 
-@Repository //o spring vai ter controle do repositorio
+@Repository // o spring vai ter controle do repositorio
 public class ProdutoRepository {
-  //private List<Produto> produtos = new ArrayList<Produto>();
+    // private List<Produto> produtos = new ArrayList<Produto>();
     private List<Produto> produtos = new ArrayList<Produto>();
+
     private int ultimoId = 0;
 
     /**
@@ -36,16 +38,19 @@ public class ProdutoRepository {
         return produtos
                 .stream()// filtrar
                 .filter(produto -> produto.getId() == id)// pergar da array apenas o produto que tem o ID
-                .findFirst(); // pega o primeiro e retorna
+                .findFirst(); // pega o primeiro e retorna. Devolve um Optional
     }
-/**
- * Metodo para adicionar produto na lista.
- * @param produto produto que será adionado
- * @return retorna o produto que foi adicionado a lista.
- */
+
+    /**
+     * Metodo para adicionar produto na lista.
+     * 
+     * @param produto produto que será adionado
+     * @return retorna o produto que foi adicionado a lista.
+     */
     public Produto adicionar(Produto produto) {
 
         ultimoId++;
+        // ultimoId+=1;
 
         produto.setId(ultimoId);
         produtos.add(produto);
@@ -53,7 +58,40 @@ public class ProdutoRepository {
         return produto;
     }
 
-}
+    /**
+     * Metodo para deletar o produto por ID
+     * 
+     * @param id Produto a ser deletado.
+     */
+    public void deletar(int id) {
 
-    
-    // time: 18:46
+        produtos.removeIf(produto -> produto.getId() == id);
+
+    }
+
+    /**
+     * Metodo para atualizar o produto na lista
+     * 
+     * @param produto produto que será atualizado
+     * @return retorna o produto após ser atualizado
+     */
+    public Produto atualizar(Produto produto) {
+
+        // econtrar o produto na lista
+        Optional<Produto> produtoEncontrado = obterPorId(produto.getId());
+        if (produtoEncontrado.isEmpty()) {
+            throw new InputMismatchException("Produto não econtrado!");
+
+        }
+        // remover o produto antifo da lista
+
+        deletar(produto.getId());
+
+        // add o produto atualizado na lista
+        produtos.add(produto);
+
+        return produto;
+
+    }
+
+}
