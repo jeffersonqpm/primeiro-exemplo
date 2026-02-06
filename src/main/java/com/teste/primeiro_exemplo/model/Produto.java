@@ -2,7 +2,7 @@ package com.teste.primeiro_exemplo.model;
 
 public class Produto {
 
-    // #region Atributos
+  
 
     private int id;
     private String nome;
@@ -10,10 +10,8 @@ public class Produto {
     private double valor;
     private String observacao;
 
-    
-
-    
-
+       
+  // #region Atributos
 
     public int getId() {
         return id;

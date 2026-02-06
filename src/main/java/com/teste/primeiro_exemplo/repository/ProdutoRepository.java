@@ -6,17 +6,16 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
-
 import com.teste.primeiro_exemplo.model.Produto;
 
-@Repository
+@Repository //o spring vai ter controle do repositorio
 public class ProdutoRepository {
-
+  //private List<Produto> produtos = new ArrayList<Produto>();
     private List<Produto> produtos = new ArrayList<Produto>();
     private int ultimoId = 0;
 
     /**
-     * Metodo para retornar uma lista de produtos
+     * Metodo para retornar uma lista de todos os produtos
      * 
      * @return Lista de produtos
      */
@@ -42,7 +41,7 @@ public class ProdutoRepository {
 /**
  * Metodo para adicionar produto na lista.
  * @param produto produto que será adionado
- * @return retorna o produto que foi adicionado na lista.
+ * @return retorna o produto que foi adicionado a lista.
  */
     public Produto adicionar(Produto produto) {
 
