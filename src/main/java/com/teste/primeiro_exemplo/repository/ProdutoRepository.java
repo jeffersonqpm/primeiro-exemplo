@@ -15,7 +15,7 @@ public class ProdutoRepository {
     private int ultimoId = 0;
 
     /**
-     * Metodo para retornar uma lista de todos os produtos
+     * Metodo para retornar a lista de todos os produtos
      * 
      * @return Lista de produtos
      */
