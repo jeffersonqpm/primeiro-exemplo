@@ -39,7 +39,7 @@ public class ProdutoService {
     }
 
     public void deletar(int id){
-        // pdoe ter alguma logica de validação antes de delitar ex.: verificar se o usuario tem premissão para deletar
+        // pode ter alguma logica de validação antes de delitar ex.: verificar se o usuario tem premissão para deletar
         produtoRepository.deletar(id);
 
     }
