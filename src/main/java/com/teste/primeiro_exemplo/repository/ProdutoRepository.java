@@ -8,6 +8,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 import com.teste.primeiro_exemplo.model.Produto;
+import com.teste.primeiro_exemplo.model.exception.ResourceNotFoundException;
 
 @Repository // o spring vai ter controle do repositorio
 public class ProdutoRepository {
@@ -81,7 +82,8 @@ public class ProdutoRepository {
         // econtrar o produto na lista
         Optional<Produto> produtoEncontrado = obterPorId(produto.getId());
         if (produtoEncontrado.isEmpty()) {
-            throw new InputMismatchException("Produto não econtrado!");
+            throw new ResourceNotFoundException("Produto não pode ser atualizado pois não existe");
+            // throw new InputMismatchException("Produto não econtrado!");
 
         }
         // remover o produto antifo da lista
