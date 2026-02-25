@@ -11,9 +11,10 @@ import com.teste.primeiro_exemplo.model.Produto;
 
 @Repository // o spring vai ter controle do repositorio
 public class ProdutoRepository {
-    // private List<Produto> produtos = new ArrayList<Produto>();
-    private List<Produto> produtos = new ArrayList<Produto>();
 
+    // SIMULANDO O BANCO DE DADOS
+
+    private List<Produto> produtos = new ArrayList<Produto>();
     private int ultimoId = 0;
 
     /**

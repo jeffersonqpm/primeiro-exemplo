@@ -1,6 +1,6 @@
 package com.teste.primeiro_exemplo.services;
 
-import java.util.InputMismatchException;
+//import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,6 +44,13 @@ public class ProdutoService {
 
     }
 
+
+        /**
+         * 
+         * @param produto será atualizado
+         * @param id do produto
+         * @return retorna o produto após atualizar a lista
+         */
         public Produto atualizar(Integer id, Produto produto) {
 
             // ter alguma validação do ID
